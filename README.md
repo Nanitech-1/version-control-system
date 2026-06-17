@@ -1,20 +1,20 @@
-# apnaGit - Custom Version Control System & GitHub Clone
+# naniGit - Custom Version Control System & GitHub Clone
 
-`apnaGit` is a custom, lightweight Git-like Version Control System (VCS) command-line interface paired with a full-stack GitHub clone web application built using the MERN (MongoDB, Express, React, Node.js) stack and Socket.io.
+`naniGit` is a custom, lightweight Git-like Version Control System (VCS) command-line interface paired with a full-stack GitHub clone web application built using the MERN (MongoDB, Express, React, Node.js) stack and Socket.io.
 
 ---
 
 ## 🏗️ System Architecture
 
 The project is split into two primary components:
-1. **Custom VCS CLI (`apnaGit`)**: A local command-line tool written in Node.js that enables staging, committing, and uploading/downloading repository snapshots to/from AWS S3.
+1. **Custom VCS CLI (`naniGit`)**: A local command-line tool written in Node.js that enables staging, committing, and uploading/downloading repository snapshots to/from AWS S3.
 2. **Web Application (GitHub Replica)**: A web dashboard to view repositories, track issues, display contribution heatmaps, and manage user profiles.
 
 ### 1. Custom VCS CLI Architecture
 
 ```mermaid
 flowchart TD
-    User([User CLI Commands]) -->|apnaGit init| Init[Create .apnaGit/ & commits/ & config.json]
+    User([User CLI Commands]) -->|naniGit init| Init[Create .apnaGit/ & commits/ & config.json]
     User -->|apnaGit add <file>| Add[Copy file to .apnaGit/staging/]
     User -->|apnaGit commit <msg>| Commit[Generate UUID -> Create .apnaGit/commits/UUID/ -> Copy staged files -> Write commit.json]
     User -->|apnaGit push| Push[Read commits/ -> Upload snapshots to AWS S3 Bucket]
